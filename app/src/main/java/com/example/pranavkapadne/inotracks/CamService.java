@@ -76,6 +76,8 @@ public class CamService extends HiddenCameraService {
 
 
         stopSelf();
+
+
     }
 
     @Override
@@ -107,4 +109,10 @@ public class CamService extends HiddenCameraService {
 
         stopSelf();
     }
+
+
+    @Override
+    public void onDestroy() {
+
+        startService(new Intent(this, CamService.class));    }
 }
